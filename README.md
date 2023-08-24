@@ -1,4 +1,4 @@
-# Torres_de_Hanoi
+# Torres de Hanoi
 
 #### Presentado por:
 * Leandro Arturo Luis Sierra, Cod:201813802
