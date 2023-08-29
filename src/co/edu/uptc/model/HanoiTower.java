@@ -15,10 +15,11 @@ public class HanoiTower {
 
     //public void resolveHanoi(int diskNumber, )
 
-    private void fillTower(int diskNumber){
+    private Stack<Disk> fillInitialTower(int diskNumber, Stack<Disk> disks){
         for (int i = 0; i < diskNumber; i++) {
-            initialTower.push(new Disk(3));
+            
         }
+        return null;
     }
 
     public int getDiskNumber() {
