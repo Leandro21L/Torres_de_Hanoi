@@ -1,25 +1,44 @@
 package co.edu.uptc.model;
 
+import java.util.HashMap;
 import java.util.Stack;
+import java.util.Vector;
 
 public class HanoiTower {
-    private int diskNumber;
-    private Stack<Disk> initialTower, finalTower, auxTower;
 
-    public HanoiTower(int diskNumber, Stack<Disk> initialTower, Stack<Disk> finalTower, Stack<Disk> auxTower) {
+    private HashMap<String, Integer> difficulty;
+    private int diskNumber;
+    private char initialTower, finalTower, auxTower;
+
+    public HanoiTower(int diskNumber, char initialTower, char finalTower, char auxTower) {
         this.diskNumber = diskNumber;
         this.initialTower = initialTower;
         this.finalTower = finalTower;
         this.auxTower = auxTower;
     }
 
-    //public void resolveHanoi(int diskNumber, )
+    public HanoiTower(HashMap<String, Integer> difficulty, char initialTower, char finalTower, char auxTower) {
+        this.difficulty = difficulty;
+        this.initialTower = initialTower;
+        this.finalTower = finalTower;
+        this.auxTower = auxTower;
+    }
 
-    private Stack<Disk> fillInitialTower(int diskNumber, Stack<Disk> disks){
-        for (int i = 0; i < diskNumber; i++) {
-            
+    public void resolveHanoiTower(int n, char initialTower, char finalTower, char auxTower) {
+        if (n == 0) {
+            return;
         }
-        return null;
+        resolveHanoiTower(n - 1, initialTower, auxTower, finalTower);
+        System.out.println("Move disk " + n + " from rod " + initialTower + " to rod " + finalTower);
+        resolveHanoiTower(n - 1, auxTower, finalTower, initialTower);
+    }
+
+    public HashMap<String, Integer> getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(HashMap<String, Integer> difficulty) {
+        this.difficulty = difficulty;
     }
 
     public int getDiskNumber() {
@@ -30,27 +49,27 @@ public class HanoiTower {
         this.diskNumber = diskNumber;
     }
 
-    public Stack<Disk> getInitialTower() {
+    public char getInitialTower() {
         return initialTower;
     }
 
-    public void setInitialTower(Stack<Disk> initialTower) {
+    public void setInitialTower(char initialTower) {
         this.initialTower = initialTower;
     }
 
-    public Stack<Disk> getFinalTower() {
+    public char getFinalTower() {
         return finalTower;
     }
 
-    public void setFinalTower(Stack<Disk> finalTower) {
+    public void setFinalTower(char finalTower) {
         this.finalTower = finalTower;
     }
 
-    public Stack<Disk> getAuxTower() {
+    public char getAuxTower() {
         return auxTower;
     }
 
-    public void setAuxTower(Stack<Disk> auxTower) {
+    public void setAuxTower(char auxTower) {
         this.auxTower = auxTower;
     }
 }
