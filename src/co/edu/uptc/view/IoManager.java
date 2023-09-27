@@ -1,4 +1,4 @@
-package co.edu.uptc.model.view;
+package co.edu.uptc.view;
 
 import javax.swing.*;
 

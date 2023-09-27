@@ -1,7 +1,7 @@
 package co.edu.uptc.presenter;
 
 import co.edu.uptc.model.HanoiTower;
-import co.edu.uptc.model.view.IoManager;
+import co.edu.uptc.view.IoManager;
 import co.edu.uptc.utils.FileManager;
 
 import java.util.HashMap;
